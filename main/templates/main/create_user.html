@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+    <h1>Создание пользователя</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.login }} <br>
+        {{ form.password }} <br>
+        {{ form.first_name }} <br>
+        {{ form.last_name }} <br>
+        {{ form.other_name }} <br>
+        {{ form.email }} <br>
+        {{ form.phone }} <br>
+        {{ form.birthday }} <br>
+        {{ form.city }} <br>
+        {{ form.additional_info }} <br>
+        <button type="submit">Создать</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
